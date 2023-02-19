@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/xjasonlyu/tun2socks/v2/common/pool"
+	"github.com/xjasonlyu/tun2socks/v2/component/remotedns"
 	"github.com/xjasonlyu/tun2socks/v2/core/adapter"
 	"github.com/xjasonlyu/tun2socks/v2/log"
 	M "github.com/xjasonlyu/tun2socks/v2/metadata"
@@ -35,6 +36,8 @@ func handleTCPConn(localConn adapter.TCPConn) {
 		DstIP:   net.IP(id.LocalAddress),
 		DstPort: id.LocalPort,
 	}
+
+	remotedns.RewriteMetadata(metadata)
 
 	targetConn, err := proxy.Dial(metadata)
 	if err != nil {

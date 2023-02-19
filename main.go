@@ -36,7 +36,9 @@ func init() {
 	flag.StringVar(&key.TCPSendBufferSize, "tcp-sndbuf", "", "Set TCP send buffer size for netstack")
 	flag.StringVar(&key.TCPReceiveBufferSize, "tcp-rcvbuf", "", "Set TCP receive buffer size for netstack")
 	flag.BoolVar(&key.TCPModerateReceiveBuffer, "tcp-auto-tuning", false, "Enable TCP receive buffer auto-tuning")
+	flag.BoolVar(&key.RemoteDNS, "remote-dns", false, "Enable remote DNS (HTTP, Shadowsocks, SOCKS)")
 	flag.BoolVar(&versionFlag, "version", false, "Show version and then quit")
+	flag.StringVar(&key.RemoteDNSNetIPv4, "remote-dns-net-ipv4", "198.18.0.0/15", "IPv4 network for remote DNS A records")
 	flag.Parse()
 }
 

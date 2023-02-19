@@ -14,4 +14,6 @@ type Key struct {
 	TCPSendBufferSize        string        `yaml:"tcp-send-buffer-size"`
 	TCPReceiveBufferSize     string        `yaml:"tcp-receive-buffer-size"`
 	UDPTimeout               time.Duration `yaml:"udp-timeout"`
+	RemoteDNS                bool          `yaml:"remote-dns"`
+	RemoteDNSNetIPv4         string        `yaml:"remote-dns-net-ipv4"`
 }
