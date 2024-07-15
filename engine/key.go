@@ -17,4 +17,6 @@ type Key struct {
 	TUNPreUp                 string        `yaml:"tun-pre-up"`
 	TUNPostUp                string        `yaml:"tun-post-up"`
 	UDPTimeout               time.Duration `yaml:"udp-timeout"`
+	RemoteDNS                bool          `yaml:"remote-dns"`
+	RemoteDNSNetIPv4         string        `yaml:"remote-dns-net-ipv4"`
 }

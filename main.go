@@ -40,6 +40,8 @@ func init() {
 	flag.StringVar(&key.TUNPreUp, "tun-pre-up", "", "Execute a command before TUN device setup")
 	flag.StringVar(&key.TUNPostUp, "tun-post-up", "", "Execute a command after TUN device setup")
 	flag.BoolVar(&versionFlag, "version", false, "Show version and then quit")
+	flag.BoolVar(&key.RemoteDNS, "remote-dns", false, "Enable remote DNS (HTTP, Shadowsocks, SOCKS)")
+	flag.StringVar(&key.RemoteDNSNetIPv4, "remote-dns-net", "198.18.0.0/15", "IPv4 network for remote DNS A records")
 	flag.Parse()
 }
 
